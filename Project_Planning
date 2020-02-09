@@ -1,0 +1,30 @@
+
+Project 3 - Artwork Catalog :
+    - Task : Create a prototype app to store data about the artists and their artworks. Focus on the required features.  
+      You'll be graded on appliication design and writing testable code. Need to save the Artist Name and their Email
+      and the following data Artist name ,Artwork Name , Price and if its been sold.
+    
+ 
+Writing modular code. Will need to break things up into functions as often as possible. Off the bat will need to following methods. 
+    - Display Menu Function
+        - Menu Function uses escape characters to format output.
+        - Returns an interger that will call the function to CRUD
+    - CRUD Functions
+        - All Functions us with conn """
+        - Call validation methods before connecting to the database. 
+        - Seperate Function isArtistPresent 
+        - Add new artists
+            -Check if artists is in database, isArtistPresent.
+        - Search for alll the artwork by an artist (everything - available and sold)
+            - check if artist is in database. 
+        - Display all the available artwork by an artist
+            -Check if artist is in database. 
+        - Add a new artwork
+    - Validation Functions
+        - Int Validation with Range and Is Present. Add option to quit?
+            -Seperate one for currency/price validation?
+        - String Validation, can only use A - Z, and IsPresent
+        - Email Validation, '@' Is Present. Only accpet .com , .edu and .net
+    - Main While loop :
+        - Main will be in a while loop.
+        - Break if user press quit.
