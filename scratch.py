@@ -1,8 +1,13 @@
+from tkinter import *
 
+root = Tk()
 
-extentsions_list = (".net", ".com", ".edu")
+def myClick():
+    myLabel = Label(root, text = "Look! I clicked a button!! ")
+    myLabel.pack()
 
+myButton = Button(root, text =" Click me!", command = myClick)
+myButton.pack()
 
-emails = 'easdsf@.com'
-if emails[:-4]  in extentsions_list :
-
+root.mainloop()
+   

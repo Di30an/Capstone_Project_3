@@ -94,7 +94,24 @@ def displayAvailable():
                 print (row[0] + " " + row[1])
 
 def add_new_Artwork():
-    pass
+# Function to return a valid name
+    added_artist = isName()
+    # Fuction to return a valid email
+    added_artwork = input("Please enter an Artist Name")
+    insert_sql = "INSERT INTO artworks (artist , artwork_name) VALUES (?,?)"
+    
+    with sqlite3.connect(db_file) as conn : 
+        c = conn.cursor()
+        c.execute(' SELECT artwork_name FROM artworks WHERE artist =(?)',(added_artist,))
+        all_rows = c.fetchall()
+        if len(all_rows) == 0:
+            conn.execute(insert_sql ,(added_artist, added_artwork) ) 
+            print(f" {added_artist} Newly added to the database.")
+        else :
+            conn.execute(insert_sql ,(added_artist, added_artwork) ) 
+            print(f" {added_artist} Added to the database.")            
+
+
 def change_Availblity():
     pass
 
@@ -107,7 +124,10 @@ def isEmail():
         email = input("Please enter an Artist Email that ends with a .com")
     else: 
         return email
-        
+def isnNumber():
+    pass
+def available():
+    pass      
 def isName():
 # Mainly checks if a name is present. Difficult to Regex names 
     name = input("Please enter an Artist Name")
